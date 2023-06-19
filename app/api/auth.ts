@@ -50,7 +50,7 @@ export function auth(req: NextRequest,skipCustomKey=true) {
   }
 
   // if user does not provide an api key, inject system api key
-  if (!token) {
+  // if (!token) {
     const apiKey = serverConfig.apiKey;
     if (apiKey) {
       console.log("[Auth] use system api key");
@@ -58,9 +58,9 @@ export function auth(req: NextRequest,skipCustomKey=true) {
     } else {
       console.log("[Auth] admin did not provide an api key");
     }
-  } else {
-    console.log("[Auth] use user api key");
-  }
+  // } else {
+  //   console.log("[Auth] use user api key");
+  // }
 
   return {
     error: false,
